@@ -1,0 +1,5 @@
+# Python packages used by the compiler and generated Word-building program.
+lxml>=4.9
+python-docx>=1.2,<2
+
+# Install Pandoc >=2.12 separately for LaTeX compilation; generated code does not need it.

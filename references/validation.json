@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-14",
+  "status": "passed",
+  "python": "Python interpreter with lxml and python-docx>=1.2,<2",
+  "pandoc": "2.19.2",
+  "scope": "Bundled engine, temporary synthetic documents; no production DOCX or Word COM used.",
+  "tests": [
+    {
+      "selector": "test_workflow.py",
+      "passed": 21,
+      "seconds": 43.855,
+      "desktop_bridge": "mocked"
+    },
+    {
+      "selector": "test_tracked_reviews.py",
+      "passed": 32,
+      "seconds": 64.237
+    },
+    {
+      "selector": "test_texword.py",
+      "passed": 11,
+      "seconds": 6.305
+    },
+    {
+      "selector": "test_adoption.py",
+      "passed": 8,
+      "seconds": 26.199,
+      "after_fix": true
+    }
+  ],
+  "total_passed": 72,
+  "skill_validation": "quick_validate passed",
+  "snapshot_integrity": "See engine-snapshot.json for public distribution hashes; private machine paths removed.",
+  "changes_after_initial_suites": [
+    "adopt_extract.py: accept Pandoc Header nodes and preserve unnumbered headings; direct and inherited numPr remain numbering evidence",
+    "tests/test_adoption.py: fresh adoption with baseline and original-byte check; numbering detection regression"
+  ],
+  "evidence_limits": [
+    "First three suites passed before the narrow extraction fix; adoption suite passed on final packaged snapshot.",
+    "Tests do not prove actual Word COM operation or arbitrary automatic numbering support.",
+    "This is historical synthetic-test evidence; publication checks are recorded separately in publication-checks.json."
+  ],
+  "resolved_failure": {
+    "symptom": "Fresh standard Word heading initially rejected by extractor; then numbered section anchor could not bind to unnumbered original text.",
+    "cause": "Heading extraction assumed Para/Plain and assigned numbered sections to every non-bibliography heading.",
+    "repair_owner": "assets/texword/adopt_extract.py",
+    "guard": "Fresh adoption fixture compiles and generates a mapped working copy, passes baseline check, preserves original bytes; retain anchor refusal."
+  }
+}

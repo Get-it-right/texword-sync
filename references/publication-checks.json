@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-14",
+  "purpose": "Public source distribution checks; no production documents or desktop Word operated.",
+  "python_version": "3.12.14",
+  "pandoc_version": "2.19.2",
+  "skill_structure": "passed",
+  "privacy_scan": {
+    "status": "passed",
+    "scope": "Explicit publishable text files, including source, tests, metadata, comments and docs; private identity/workspace markers, email, credential patterns and private IPv4 ranges checked.",
+    "findings": 0,
+    "excluded": "Caches, bytecode, original documents, logs, databases, original development history and private provenance paths are not part of the public file list.",
+    "limits": "Targeted automated checks plus inspection of discovered locations; this is not a guarantee against every possible privacy issue."
+  },
+  "license": {
+    "name": "PolyForm Noncommercial 1.0.0",
+    "source": "https://polyformproject.org/licenses/noncommercial/1.0.0.txt",
+    "sha256": "ffcca38841adb694b6f380647e15f17c446a4d1656fed51a1e2041d064c94cc8",
+    "text": "Official unmodified license text; project attribution is in NOTICE."
+  },
+  "changes_for_public_distribution": [
+    "Replace fixed personal interpreter path with sys.executable in test_codegen_extra.py.",
+    "Remove private workspace paths from instructions, provenance and historical validation metadata.",
+    "Keep only repository-relative provenance and engine file hashes.",
+    "Clarify early experimental status, incomplete support and permitted noncommercial improvements.",
+    "Normalize public text to LF with .gitattributes so checked-out engine hashes are portable."
+  ],
+  "tests": [
+    {
+      "selector": "test_codegen_extra.py",
+      "passed": 3,
+      "seconds": 5.329
+    },
+    {
+      "selector": "test_adoption.py",
+      "passed": 8,
+      "seconds": 7.259
+    }
+  ],
+  "historical_validation": "references/validation.json; no claim that all historical suites were rerun for publication.",
+  "known_limits": [
+    "No real desktop Word COM validation in this publication check.",
+    "Existing Windows system-path assumptions remain documented.",
+    "Arbitrary complex Word/LaTeX content and all automatic numbering formats are not covered."
+  ],
+  "tests_passed_this_publication": 11
+}
