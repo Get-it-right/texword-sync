@@ -1,4 +1,4 @@
 interface:
   display_name: "LaTeX–Word 双向协作"
-  short_description: "人在 Word 中直接修改，AI 通过 LaTeX 读取处理，并维护模板格式与双向同步"
-  default_prompt: "使用 $texword-sync 回读我在 Word 中直接修改的内容，转换为 LaTeX 供 AI 继续处理，并按要求维护格式和同步回 Word。"
+  short_description: "人和 AI 共同改稿，用户审定 AI 修订，也可直接在 Word 改写，AI 维护格式"
+  default_prompt: "使用 $texword-sync 读取我在 Word 中的直接改写，由 AI 继续修改内容，并以 Word 原生修订供我接受或拒绝，同时维护格式。"

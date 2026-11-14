@@ -1,10 +1,12 @@
 # TexWord Sync · LaTeX–Word 双向协作
 
-**人在 Word 中直接改内容，AI 通过 LaTeX 读取、理解和继续处理；人专注内容，AI 负责维护格式。**
+**人和 AI 都能修改内容，用户掌握最终取舍：人直接在 Word 中改写，AI 通过 LaTeX 编辑并将建议以 Word 原生修订交给用户接受或拒绝；格式由 AI 维护。**
 
-Write directly in Word. Let AI read and process your edits through LaTeX, and manage formatting through templates.
+Both you and AI can edit the content. Review AI edits as native Word tracked changes and accept or reject them. Edit directly in Word yourself; AI reads your saved changes through LaTeX, continues editing, and manages formatting through templates.
 
-用户可以像平常写文档一样，在 Word 中直接增删、改写正文、调整段落，也可以接受或拒绝 AI 的原生修订。同步时，程序将已保存的 Word 修改自动转换回 LaTeX，供 AI 读取并继续编辑，再把结果生成回 Word。用户自己的改写会成为后续协作的输入。
+AI 可以读取上下文、修改内容，并将需要用户审阅的改动生成为 Word 原生删除／插入修订，由用户决定接受或拒绝。这是协作的基础功能；用户的取舍会在后续同步中保留，具体修订方式沿用本次任务的授权。
+
+用户同时可以像平常写文档一样，在 Word 中直接增删、改写正文和调整段落。同步时，程序将已保存的 Word 修改自动转换回 LaTeX，供 AI 读取并继续编辑，再把结果生成回 Word。用户自己的改写也会成为后续协作的输入。
 
 内容和格式的分工贯穿整个流程：用户提出内容与格式要求，在 Word 中专注表达；AI 通过 LaTeX、模板和生成流程维护样式、编号、引用及排版。在已接入且受支持的文档范围内，用户无需为每次内容修改重新手工整理格式。同步由工程命令触发，不是后台实时监听；首次接入和复杂对象仍有下述限制。
 
@@ -14,6 +16,7 @@ Write directly in Word. Let AI read and process your edits through LaTeX, and ma
 
 ## 能做什么
 
+- **AI 改稿，用户审定**：AI 在 LaTeX 中修改内容，需要审阅的建议生成 Word 原生修订，用户可以接受或拒绝；同步保留用户的决定。
 - **直接在 Word 中写作和改稿**：用户的增删改写可在同步时自动回读为 LaTeX，成为 AI 下一轮读取和处理的内容。
 - **由 AI 维护格式**：用户专注内容与要求，AI 通过源模板和生成流程维护样式、编号、引用及排版。
 - **持续双向协作**：将既有 Word 接入 LaTeX 工程，或以 Word 模板生成带源映射的工作稿；AI 修改后再生成回 Word。
